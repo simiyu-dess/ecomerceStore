@@ -27,40 +27,7 @@
     <body>
         <!-- Top bar Start -->
        {% include "navigationbar.html" %}
-        
-        <!-- Bottom Bar Start -->
-        <div class="bottom-bar">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-md-3">
-                        <div class="logo">
-                                <a href="{% url 'Products:home_page' %}">
-                                <img src="img/logo.png" alt="Logo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="search">
-                            <input type="text" placeholder="Search">
-                            <button><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="user">
-                            <a href="wishlist.html" class="btn wishlist">
-                                <i class="fa fa-heart"></i>
-                                <span>(0)</span>
-                            </a>
-                            <a href="cart.html" class="btn cart">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span>(0)</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Bottom Bar End -->       
+             
         
         <!-- Main Slider Start -->
         <div class="header">
@@ -279,8 +246,9 @@
                 <div class="row align-items-center product-slider product-slider-4">
                     <div class="col-lg-3">
                         <div class="product-item">
+                            <a href="{% url 'Products:product-detail' %}">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <p>Product Name</p>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -290,20 +258,17 @@
                                 </div>
                             </div>
                             <div class="product-image">
-                                <a href="{% url 'Products:product-detail' %}">
                                     <img src="img/product-1.jpg" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
                             </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
+                        </a>
+                        <div class="product-price">
+                            <h3><span>$</span>99</h3>
+                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Add To Cart</a>
                         </div>
+                           
+                            
+                        </div>
+                        
                     </div>
                     <div class="col-lg-3">
                         <div class="product-item">

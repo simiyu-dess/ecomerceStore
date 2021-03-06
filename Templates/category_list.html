@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -30,37 +31,7 @@
         <!-- Nav Bar End -->      
         
         <!-- Bottom Bar Start -->
-        <div class="bottom-bar">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-md-3">
-                        <div class="logo">
-                            <a href="{% url 'Products:home_page' %}">
-                                <img src="img/logo.png" alt="Logo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="search">
-                            <input type="text" placeholder="Search">
-                            <button><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="user">
-                            <a href="wishlist.html" class="btn wishlist">
-                                <i class="fa fa-heart"></i>
-                                <span>(0)</span>
-                            </a>
-                            <a href="cart.html" class="btn cart">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span>(0)</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <!-- Bottom Bar End -->  
         
         <!-- Breadcrumb Start -->
@@ -68,7 +39,7 @@
             <div class="container-fluid">
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{% url 'Products:home_page' %}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'Products:products-list'%}">Products</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'Products:products_list'%}">Products</a></li>
                     <li class="breadcrumb-item active">Product List</li>
                 </ul>
             </div>
