@@ -740,6 +740,7 @@ h2 {
 
 .product-item .product-image img {
     width: 100%; 
+    height: 100px;
     transition: all .3s;
 }
 
@@ -750,7 +751,7 @@ h2 {
 .product-item .product-image .product-action {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100px;
     top: 0;
     left: 0;
     display: flex;

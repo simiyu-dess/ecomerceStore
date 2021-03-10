@@ -7,6 +7,6 @@ urlpatterns=[
     path('', views.home_pageview, name='home_page'),
     path('products/',
         views.products_list, name='products_list'),
-    path('products/product-detail/',
-        views.product_detail, name='product-detail'),
+   url(r'^(?P<id>\d+)/(?P<product_slug>[-\w]+)/$',
+        views.product_detail, name='product_detail'),
 ]

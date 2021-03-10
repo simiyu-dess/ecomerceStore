@@ -37,15 +37,16 @@ class Product(models.Model):
     old_price=models.DecimalField(max_digits=9,decimal_places=2, null=True,blank=True)
     is_active=models.BooleanField(default=True)
     is_featured=models.BooleanField(default=False)
-    product_image_one=models.FileField(upload_to='imagefiles',
-                                       blank=True,
+    product_image_one=models.ImageField(upload_to='imagefiles',
+                                       blank=True, height_field="image_height",
                                        help_text="The first image for the prouct")
-    product_image_two=models.FileField(upload_to='imagefiles', 
-                                       blank=True,
+    product_image_two=models.ImageField(upload_to='imagefiles', 
+                                       blank=True, height_field="image_height",
                                        help_text="Another image for the product")
-    product_image_three=models.FileField(upload_to='imagefiles',
-                                         blank=True,
+    product_image_three=models.ImageField(upload_to='imagefiles',
+                                         blank=True, height_field="image_height",
                                          help_text="another image for the product")
+    image_height=models.PositiveIntegerField(default=100)
     quantity=models.IntegerField(default=1)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
@@ -58,8 +59,8 @@ class Product(models.Model):
     def __unicode__(self):
         return self.product_name
     
-    def get_abosolute_url(self):
-        return reverse('product_slug', args=[self.product_slug])
+    def get_absolute_url(self):
+        return reverse('Products:product_detail', args=[self.id, self.product_slug])
     
     def sale_price():
         if self.old_price > price:
