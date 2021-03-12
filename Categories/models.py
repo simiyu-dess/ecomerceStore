@@ -5,7 +5,7 @@ from django.template.defaultfilters import slugify
 
 class Category(models.Model):
     category_name=models.TextField()
-    category_id=models.IntegerField()
+    category_id=models.IntegerField(auto_created=True)
     category_description=models.CharField(max_length=100)
     category_slug = models.SlugField(unique=True, max_length=255)
     meta_keywords = models.CharField("Meta Keywords", max_length=255,
@@ -24,6 +24,10 @@ class Category(models.Model):
         
     def __unicode__(self):
         return self.category_name
+    
+    def __str__(self):
+        return self.category_name
+    
     def get_absolute_url(self):
-        return reverse('category_slug', args=[self.category_slug])
+        return reverse('Products:products_list_by_category', args=[self.category_slug])
 # Create your models here.

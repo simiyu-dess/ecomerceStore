@@ -16,16 +16,19 @@ class Brand(models.Model):
     def __unicode__(self):
         return self.brand_name
     
-    def get_abosolute_url(self):
-        return reverse('brand_slug', args=[self.brand_slug])
+    def __str__(self):
+        return self.brand_name
+    
+    def get_absolute_url(self):
+        return reverse('Products:products_list_by_brand', args=[self.brand_slug])
     
     
 class Product(models.Model):
     product_name=models.TextField(blank=False)
     product_slug=models.SlugField(max_length=255, unique=True,
                           help_text="Unique value for products, created from the products name")
-    brand_name=models.ForeignKey(Brand, on_delete=models.CASCADE)
-    product_description=models.CharField(max_length=100, blank=False)
+    brand=models.ForeignKey(Brand, on_delete=models.CASCADE)
+    product_description=models.CharField(max_length=255, blank=False)
     meta_keywords=models.CharField("Meta Keywords",
                                    max_length=255,
                                    help_text="Content for the meta keywords")
@@ -38,19 +41,19 @@ class Product(models.Model):
     is_active=models.BooleanField(default=True)
     is_featured=models.BooleanField(default=False)
     product_image_one=models.ImageField(upload_to='imagefiles',
-                                       blank=True, height_field="image_height",
+                                       blank=True,
                                        help_text="The first image for the prouct")
     product_image_two=models.ImageField(upload_to='imagefiles', 
-                                       blank=True, height_field="image_height",
+                                       blank=True,
                                        help_text="Another image for the product")
     product_image_three=models.ImageField(upload_to='imagefiles',
-                                         blank=True, height_field="image_height",
+                                         blank=True,
                                          help_text="another image for the product")
-    image_height=models.PositiveIntegerField(default=100)
+    
     quantity=models.IntegerField(default=1)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
-    categories=models.ManyToManyField(Category)
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     
     class Meta:
         db_table="products"

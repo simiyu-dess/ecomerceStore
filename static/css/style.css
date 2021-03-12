@@ -453,13 +453,22 @@ h2 {
     color: #353535;
 }
 
-.header-slider {
+.header-slider .normal-slider{
     position: relative;
     width: 100%;
+    height: 400px;
 }
 
 .header-slider .header-slider-item {
     position: relative;
+    height: 400px;
+}
+.header-slider .header-slider-item img{
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    flex-wrap: wrap;
 }
 
 .header-slider .header-slider-caption {
@@ -514,7 +523,7 @@ h2 {
 
 .header .img-item img {
     width: 100%; 
-    height: 100%; 
+    height: 100px; 
     object-fit: cover; 
 }
 
@@ -688,7 +697,7 @@ h2 {
 .product-item .product-title {
     padding: 15px;
     text-align: center;
-    background: #000000;
+    /*background: #000000;*/
     transition: all .3s;
 }
 
@@ -704,7 +713,7 @@ h2 {
 
 .product-item .product-title a {
     margin-bottom: 5px;
-    color: #ffffff;
+    color: #be1010;
     font-size: 18px;
 }
 
@@ -716,7 +725,7 @@ h2 {
 .product-item .product-content .price span {
     margin-left: 12px;
     text-decoration: line-through;
-    font-weight: 300;
+    font-weight: 150;
     color: #999999;
 }
 
@@ -739,13 +748,11 @@ h2 {
 .product-item .product-image a {
     display: block;
     background: #ffffff;
-    height: 100%;
     transition: .3s;
 }
 
 .product-item .product-image img {
     width: 100%; 
-    height: 100%;
     transition: all .3s;
 }
 
@@ -755,8 +762,7 @@ h2 {
 
 .product-item .product-image .product-action {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100;
     top: 0;
     left: 0;
     display: flex;
@@ -805,7 +811,7 @@ h2 {
 
 .product-item .product-price {
     padding: 20px;
-    background: #000000;
+    /*background: #000000;*/
     transition: all .3s;
 }
 
@@ -815,12 +821,14 @@ h2 {
 
 .product-item .product-price h3 {
     display: inline-block;
-    color: #ffffff;
+    font-size: 20px;
+    color: #FF6F61;
     margin: 0;
 }
 
 .product-item .product-price h3 span {
-    font-size: 16px;
+    font-size:15px;
+    color: #cc111a;
 }
 
 .product-item .product-price .btn {
@@ -1989,7 +1997,7 @@ h2 {
     position: relative;
     margin-bottom: 30px;
     padding: 30px 0;
-    background: #ffffff;
+    background: #0d2de2;
 }
 
 .brand .brand-item {

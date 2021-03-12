@@ -387,7 +387,7 @@
                                 <ul class="navbar-nav">
                                     {% for category in categories %}
                                     <li class="nav-item">
-                                        <a class="nav-link" href="">
+                                        <a class="nav-link" href="{{category.get_absolute_url}}">
                                             <i class="fa fa-female"></i>{{category.category_name}}</a>
                                     </li>
                                     {% endfor %}
@@ -496,13 +496,17 @@
                         
                         <div class="sidebar-widget brands">
                             <h2 class="title">Our Brands</h2>
-                            <ul>
-                                <li><a href="#">Nulla </a><span>(45)</span></li>
+                            <ul> 
+                                {% for brand in brands %}
+                                <li><a href="{{brand.get_absolute_url}}">{{brand.brand_name}} </a><span>(45)</span></li>
+                                <!--
                                 <li><a href="#">Curabitur </a><span>(34)</span></li>
                                 <li><a href="#">Nunc </a><span>(67)</span></li>
                                 <li><a href="#">Ullamcorper</a><span>(74)</span></li>
                                 <li><a href="#">Fusce </a><span>(89)</span></li>
                                 <li><a href="#">Sagittis</a><span>(28)</span></li>
+                                -->
+                                {% endfor %}
                             </ul>
                         </div>
                         
