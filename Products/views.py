@@ -25,7 +25,6 @@ def home_pageview(request):
 
 def products_list(request, category_slug=None):
     category=None
-    brand=None
     
     
     categories=Category.objects.all()
@@ -39,7 +38,6 @@ def products_list(request, category_slug=None):
    
         
     context={
-        'brand':brand,
         'brands':brands,
         'category':category,
         'categories':categories,

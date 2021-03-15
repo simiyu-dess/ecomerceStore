@@ -223,7 +223,7 @@
                                 <h1>Related Products</h1>
                             </div>
                             <div class="row align-items-center product-slider product-slider-3">
-                                
+                                {% for product in products %}
                                 <div class="col-lg-3">
                                     <div class="product-item">
                                         <div class="product-title">
@@ -238,7 +238,7 @@
                                         </div>
                                         <div class="product-image">
                                             <a href="{{product.get_absolute_url}}">
-                                                <img src="{% if product.product_image_one %} {{product.product_image_one.url}}
+                                                <img src="{% if product.product_image_two %} {{product.product_image_two.url}}
                                                 {% else %} {% static 'img/product-1.jpg'%} {% endif %}">
                                             </a>
                                             
@@ -256,9 +256,10 @@
                                     </div>
                                     
                                 </div>
+                                {% endfor %}
                                 
                                 
-                                
+                                <!--
                                 <div class="col-lg-3">
                                     <div class="product-item">
                                         <div class="product-title">
@@ -371,6 +372,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                -->
                             
                             </div>
                         </div>
@@ -509,7 +511,7 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        
+                        <!--
                         <div class="sidebar-widget tag">
                             <h2 class="title">Tags Cloud</h2>
                             <a href="#">Lorem ipsum</a>
@@ -525,6 +527,7 @@
                             <a href="#">orci luctus</a>
                             <a href="#">Nam lorem</a>
                         </div>
+                        -->
                     </div>
                     <!-- Side Bar End -->
                 </div>

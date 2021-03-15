@@ -72,7 +72,7 @@
                         <div class="header-slider normal-slider">
                             {% for product in products %}
                             <div class="header-slider-item">
-                                <img src="{% if product.product_image_one %} {{product.product_image_one.url}}
+                                <img src="{% if product.product_image_two %} {{product.product_image_two.url}}
                                 {% else %} {% static 'img/brand-1.jpg' %}{% endif %}"/>
                                 <div class="header-slider-caption">
                                     <p>{{product.product_description}}</p>
@@ -190,12 +190,14 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="category-item ch-400">
-                            <img src="img/category-3.jpg" />
+                            <img src="" />
                             <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
+                                <p>text</p>
                             </a>
                         </div>
                     </div>
+                    
+                    
                     <div class="col-md-3">
                         <div class="category-item ch-250">
                             <img src="img/category-4.jpg" />
@@ -232,6 +234,7 @@
                             </a>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -259,11 +262,12 @@
                     <h1>Featured Product</h1>
                 </div>
                 <div class="row align-items-center product-slider product-slider-4">
+                    {% for product in products %}
                     <div class="col-lg-3">
                         <div class="product-item">
                             <a href="{{ product.get_absolute_url }}">
                             <div class="product-title">
-                                <p>Product Name</p>
+                                <p>{{product.product_name}}</p>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -273,11 +277,11 @@
                                 </div>
                             </div>
                             <div class="product-image">
-                                    <img src="img/product-1.jpg" alt="Product Image">
+                                    <img src="{{product.product_image_one.url}}" alt="Product Image">
                             </div>
                         </a>
                         <div class="product-price">
-                            <h3><span>$</span>99</h3>
+                            <h3><span>ksh</span>{{product.price}}</h3>
                             <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Add To Cart</a>
                         </div>
                            
@@ -285,6 +289,9 @@
                         </div>
                         
                     </div>
+                    {% endfor %}
+
+                    <!--
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
@@ -397,6 +404,7 @@
                             </div>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
@@ -443,8 +451,8 @@
                             </div>
                             <div class="product-image">
                                 <a href="{{product.get_absolute_url}}">
-                                    <img src="{% if product.product_image_one %} 
-                                    {{product.product_image_one.url}} {% else %} {% static 'img/product-8.jpg'%}{% endif %}">
+                                    <img src="{% if product.product_image_three %} 
+                                    {{product.product_image_three.url}} {% else %} {% static 'img/product-8.jpg'%}{% endif %}">
                                 </a>
                             </div>
                             <div class="product-price">
@@ -657,7 +665,7 @@
                         <div class="footer-widget">
                             <h2>Get in Touch</h2>
                             <div class="contact-info">
-                                <p><i class="fa fa-map-marker"></i>123 E Store, Los Angeles, USA</p>
+                                <p><i class="fa fa-map-marker"></i>123 E Store</p>
                                 <p><i class="fa fa-envelope"></i>email@example.com</p>
                                 <p><i class="fa fa-phone"></i>+123-456-7890</p>
                             </div>
@@ -728,11 +736,11 @@
                 <div class="row">
                     <div class="col-md-6 copyright">
                         <!--
-                        <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+                        <p> All Rights Reserved</p>
                     </div>
 
                     <div class="col-md-6 template-by">
-                        <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        <p></p>
                         -->
                     </div>
                 </div>
