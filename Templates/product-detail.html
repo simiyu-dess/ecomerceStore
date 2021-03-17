@@ -251,7 +251,13 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span>Ksh</span>{{product.price}}</h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Add to cart</a>
+
+                                            <form action="{% url "cart:cart_add" product.id %}" method="POST">
+                                                {% csrf_token %}
+                                                {{ cart_add_product_form }}
+                                                <input type="submit" value="Add to cart" class="btn">
+                                           <!-- <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </form>
                                         </div>
                                     </div>
                                     
